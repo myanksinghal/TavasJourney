@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://csxaa36hf8c6f"]
+
+[ext_resource type="FontFile" uid="uid://bouxhocvmd8ui" path="res://Assets/Menu/Text/leapfont-bold.ttf" id="1_ebg4k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 477.0
+offset_bottom = 293.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1400.0
+offset_bottom = 838.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1281.0
+offset_bottom = 728.0
+theme_override_fonts/normal_font = ExtResource("1_ebg4k")
+theme_override_font_sizes/normal_font_size = 100
+text = "Thank you for playing 
+"
+horizontal_alignment = 1
+vertical_alignment = 1

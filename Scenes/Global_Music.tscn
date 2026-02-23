@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://su0gkxqtosia"]
+
+[ext_resource type="AudioStream" uid="uid://dqenxtemye5xu" path="res://Assets/Music/Gentle Breeze.ogg" id="1_6pqyh"]
+[ext_resource type="Script" uid="uid://d1p6h1nct6gsl" path="res://Scenes/global_music.gd" id="1_jfniq"]
+
+[node name="GlobalMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_6pqyh")
+volume_db = 18.175
+bus = &"Music"
+script = ExtResource("1_jfniq")

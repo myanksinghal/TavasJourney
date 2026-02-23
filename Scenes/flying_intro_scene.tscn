@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcqxdbr70vbnb"]
+
+[ext_resource type="Script" uid="uid://b26r86383ne4m" path="res://Scripts/flying_intro_scene.gd" id="1_hm3ui"]
+[ext_resource type="Texture2D" uid="uid://fhobtfdv5mf0" path="res://Assets/Paintings/flying_squirrel.jpg" id="2_rp7fn"]
+[ext_resource type="FontFile" uid="uid://bouxhocvmd8ui" path="res://Assets/Menu/Text/leapfont-bold.ttf" id="3_rp7fn"]
+
+[sub_resource type="Animation" id="Animation_wwf30"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-117, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1j0mv"]
+resource_name = "burn_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.0]
+}
+
+[sub_resource type="Animation" id="Animation_hm3ui"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6b1b0"]
+resource_name = "intro_pan"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-117, 0), Vector2(-259, -284)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h5jmx"]
+_data = {
+&"RESET": SubResource("Animation_wwf30"),
+&"burn_animation": SubResource("Animation_1j0mv"),
+&"fade_to_black": SubResource("Animation_hm3ui"),
+&"intro_pan": SubResource("Animation_6b1b0")
+}
+
+[node name="Flying_intro_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hm3ui")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -117.0
+offset_right = 1543.0
+offset_bottom = 1020.0
+texture = ExtResource("2_rp7fn")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h5jmx")
+}
+speed_scale = 0.3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1381.0
+offset_bottom = 838.0
+color = Color(0, 0, 0, 0)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 664.0
+offset_right = 1321.0
+offset_bottom = 1124.0
+theme_override_fonts/normal_font = ExtResource("3_rp7fn")
+theme_override_font_sizes/normal_font_size = 25
+text = "Meet Tava, a tiny flying squirrel "
