@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalMusic="*res://Scenes/Global_Music.tscn"
 PauseMenue="*res://Scenes/pause_menue.tscn"
+LevelMusic="*res://Scenes/Level_music.tscn"
 
 [display]
 

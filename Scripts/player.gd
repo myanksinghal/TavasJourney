@@ -31,7 +31,7 @@ func _physics_process(delta: float):
 		#	velocity.y = wall_slide_speed * friction
 			#velocity.y = wall_slide_speed # The "dragged down" effect
 		# Check for Gliding
-		if Input.is_action_pressed("ui_jump") and velocity.y > 0.0 and not is_on_wall_latch:
+		if (Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")) and velocity.y > 0.0 and not is_on_wall_latch:
 			is_gliding = true
 			velocity.y = move_toward(velocity.y, glide_gravity, gravity * delta)
 		# Normal Gravity
@@ -162,7 +162,7 @@ func update_animations():
 		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, deg_to_rad(locked_direction * 15), 0.1)
 	elif not is_on_floor():
 		$AnimatedSprite2D.play("jump")
-		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, 0, 0.1)
+		
 	elif is_charging:
 		$AnimatedSprite2D.play("idle")
 		$AnimatedSprite2D.rotation = 0
@@ -170,3 +170,4 @@ func update_animations():
 		$AnimatedSprite2D.play("run")
 	else:
 		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.rotation = 0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://boxq0falsec1w"]
+
+[ext_resource type="Script" uid="uid://dq44htsdecne4" path="res://Scenes/level_music.gd" id="1_w7f0w"]
+
+[node name="LevelMusic" type="AudioStreamPlayer2D"]
+volume_db = -2.019
+max_distance = 4096.0
+bus = &"Music"
+script = ExtResource("1_w7f0w")

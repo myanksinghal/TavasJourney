@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://evbfymtorp6k"]
+[gd_scene load_steps=13 format=4 uid="uid://evbfymtorp6k"]
 
 [ext_resource type="PackedScene" uid="uid://bytvx11tsdsyh" path="res://Scenes/player.tscn" id="1_vly50"]
 [ext_resource type="TileSet" uid="uid://g2xwo5yeqysi" path="res://Scenes/MainWorld_TileSet.tres" id="2_c5erv"]
@@ -6,16 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://bh6dyl1x53tc7" path="res://Assets/Terrain/Level1.png" id="4_lyd6k"]
 [ext_resource type="Texture2D" uid="uid://c4ch1l1fnmu5w" path="res://Assets/Other/Dust Particle.png" id="5_2a60c"]
 [ext_resource type="FontFile" uid="uid://bouxhocvmd8ui" path="res://Assets/Menu/Text/leapfont-bold.ttf" id="6_didp7"]
-[ext_resource type="AudioStream" uid="uid://cvck6avflpt8u" path="res://Assets/Music/Ludum Dare 32 05.ogg" id="8_4iphx"]
-[ext_resource type="Script" uid="uid://68ro7gicat5u" path="res://level1_audio.gd" id="9_jgkgd"]
 
 [sub_resource type="GDScript" id="GDScript_bs12r"]
 script/source = "extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+
+func _ready():
+	pass
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -75,7 +74,7 @@ tile_set = ExtResource("2_c5erv")
 
 [node name="LevelGoal" parent="." instance=ExtResource("3_c5erv")]
 position = Vector2(-1096, -1203)
-next_scene_path = "uid://csxaa36hf8c6f"
+next_scene_path = "uid://bmx0alk15l8g"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 modulate = Color(0.34721106, 0.49055505, 0.5922908, 1)
@@ -106,18 +105,11 @@ randomness = 0.1
 process_material = SubResource("ParticleProcessMaterial_lyd6k")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 162.0
-offset_top = -346.0
-offset_right = 512.0
-offset_bottom = -193.0
+offset_left = 140.0
+offset_top = -349.0
+offset_right = 490.0
+offset_bottom = -196.0
 theme_override_fonts/normal_font = ExtResource("6_didp7")
 theme_override_font_sizes/normal_font_size = 47
-text = "Hold space to glide"
+text = "Hold direction key to glide"
 horizontal_alignment = 1
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_4iphx")
-volume_db = -1.01
-autoplay = true
-bus = &"Music"
-script = ExtResource("9_jgkgd")

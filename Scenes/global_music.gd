@@ -3,6 +3,8 @@ extends AudioStreamPlayer2D
 @export var fade_duration: float = 1.5
 @export var fade_on_scene_path: String = "res://Scenes/level1.tscn"
 
+
+
 func _ready():
 	play()
 	get_tree().root.child_entered_tree.connect(_on_scene_added)

@@ -9,6 +9,7 @@ process_mode = 3
 script = ExtResource("1_1oqk2")
 
 [node name="SettingButton" type="TextureButton" parent="."]
+visible = false
 offset_left = 655.0
 offset_top = 267.0
 offset_right = 813.678
@@ -20,10 +21,10 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="PlayButton" type="TextureButton" parent="."]
-offset_left = 469.0
-offset_top = 263.0
-offset_right = 627.678
-offset_bottom = 414.0
+offset_left = 565.0
+offset_top = 267.0
+offset_right = 723.678
+offset_bottom = 418.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("2_1oqk2")
