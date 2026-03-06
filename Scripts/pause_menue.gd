@@ -16,3 +16,9 @@ func toggle_pause():
 func _on_play_button_pressed() -> void:
 	get_tree().paused = false
 	hide()
+
+
+func _on_restart_button_pressed() -> void:
+	get_tree().paused = false
+	hide()
+	get_tree().reload_current_scene()

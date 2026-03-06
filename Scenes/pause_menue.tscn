@@ -1,34 +1,34 @@
 [gd_scene load_steps=4 format=3 uid="uid://ob5wa1ocmue3"]
 
 [ext_resource type="Script" uid="uid://bgw38d8tabue8" path="res://Scripts/pause_menue.gd" id="1_1oqk2"]
-[ext_resource type="Texture2D" uid="uid://bh7hcuaxdt0ck" path="res://Assets/Menu/Buttons/Settings.png" id="1_68uqu"]
 [ext_resource type="Texture2D" uid="uid://bo8jmqm8xnl7y" path="res://Assets/Menu/Buttons/Play.png" id="2_1oqk2"]
+[ext_resource type="Texture2D" uid="uid://tey0dfc6vttk" path="res://Assets/Menu/Buttons/Restart.png" id="2_w0a0j"]
 
 [node name="PauseMenue" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_1oqk2")
 
-[node name="SettingButton" type="TextureButton" parent="."]
-visible = false
+[node name="RestartButton" type="TextureButton" parent="."]
 offset_left = 655.0
 offset_top = 267.0
 offset_right = 813.678
 offset_bottom = 418.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("1_68uqu")
+texture_normal = ExtResource("2_w0a0j")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="PlayButton" type="TextureButton" parent="."]
-offset_left = 565.0
-offset_top = 267.0
-offset_right = 723.678
-offset_bottom = 418.0
+offset_left = 474.0
+offset_top = 270.0
+offset_right = 632.678
+offset_bottom = 421.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("2_1oqk2")
 ignore_texture_size = true
 stretch_mode = 0
 
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
